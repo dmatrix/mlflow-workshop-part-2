@@ -37,8 +37,8 @@ Instructor
 ---
 
 
-About the MLflow workshop part 2
---------------------------------
+MLflow workshop part 2
+----------------------
 
 In this part 2, we will cover:
  * Concepts and motivation behind MLflow Projects and Models
@@ -58,11 +58,11 @@ Prerequisites
      * scikit-Learn
      * pandas and Numpy
      * matplotlib
-     * Keras/TensorFlow
+     * keras/TensorFlow
 * PyCharm/IntelliJ or choice of syntax-based Python editor
 * pip/pip3 or conda and Python 3 installed
 * Knowledge on how to use [conda](https://docs.conda.io/projects/conda/en/latest/user-guide/install/) or create [pipenv](https://pypi.org/project/pipenv/) enviroments 
-* Loads of laughter, curiosity, and a sense of humor ... :-)
+* Loads of virtual laughter, curiosity, and a sense of humor ... :-)
 
 Obtaining the Tutorial Material
 --------------------------------
@@ -75,7 +75,7 @@ workshop as well as continue to work on in your free time, after the session is 
 Documentation Resources
 -----------------------
 
-This tutorial will require recent refering to documentation: 
+This tutorial will  refer to documentation: 
 
 1. [MLflow](https://mlflow.org/docs/latest/index.html) 
 2. [Numpy](https://numpy.org/devdocs/user/quickstart.html)
@@ -96,6 +96,64 @@ Installation and Setup environment
 6. If using PyCharm or IntelliJ, create a project and load source files in the project
 
 Let's go!
+
+Session Tutorials
+-----------------
+
+We'll use our local host run MLflow projects via GitHub URL
+
+Tutorial 1 - Part 1 
+-------------------
+
+Let's run a shell script to run remote MLflow GitHub Project URI.
+We will use MLflow CLI [mlflow run [OPTIONS] URI](https://mlflow.org/docs/latest/cli.html#mlflow-run)
+
+[run_project_example_1.sh](src/run_project_example_1.sh)
+
+1. After you've have setup your environment `cd <your_cloned_directory>/mlflow-workshop-part-2/src`
+2. ```./run_project_example_1.sh```
+3. This will create `./mlruns` directory with experiment ID 0, and all runs under it.
+
+Tutorial 1 - Part 2
+-------------------
+
+Let's run the same experiment using MLflow Fluent API.
+We will use programmtic interfeace [mlflow.run(...)](https://mlflow.org/docs/latest/python_api/mlflow.html#mlflow.run)
+
+
+[run_project_example_1.py](src/run_project_example_1.py)
+
+1. After you've have setup your environment `cd <your_cloned_directory>/mlflow-workshop-part-2/src`
+2. ```python run_project_example_1.py```
+3. This will create more under the `mlruns` with experiment ID 0, and all new runs under it.
+4. Launch MLflow UI to view and compare the runs.
+ * `mlflow ui`
+ * Got the brower and connect ```http://127.0.0.1:5000```
+
+Tutorial 2 - Part 1
+-------------------
+
+[simple_keras_lr.py](src/simple_keras_lr.py)
+
+1. 1. After you've have setup your environment `cd <your_cloned_directory>/mlflow-workshop-part-2/src`
+2. ```python run_project_example_1.py```
+3. This will create more under the `mlruns` with experiment ID 0, and all new runs under it.
+4. Launch MLflow UI to view and compare the runs.
+ * `mlflow ui`
+ * Got the brower and connect ```http://127.0.0.1:5000```
+ 
+ **Note**: We are loading a Keras Model as a pyfunc model and using pandas.DataFrame to do the prediction.
+ This demonstrates the capability of model flavors as discussed in the lecture slides.
+
+Homework/Lab Assignment
+-----------------------
+
+Using the above as examples:
+ * convert this Keras model or one of the models from the workshop series [Part 1](https://github.com/dmatrix/mlflow-workshop-part-1)
+ convert it as a MLflow GitHub Project and execute using different modes of execution demonstrated here.
+ * Supply differentarguments as model parameters. 
+ * Use MLflow Tracking API for this [TensorFlow/Keras Regression Model](https://www.tensorflow.org/tutorials/keras/regression)
+    * Using [mlflow.tensorfow.autolog()](https://mlflow.org/docs/latest/python_api/mlflow.tensorflow.html#mlflow.tensorflow.autolog)
 
 Cheers,
 Jules
