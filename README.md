@@ -133,7 +133,7 @@ We will use programmtic interfeace [mlflow.run(...)](https://mlflow.org/docs/lat
 Tutorial 2 
 ----------
 
-[run_simple_keras_lr.py](src/run_simple_keras_lr.py)
+[run_simple_kerdas_lr.py](src/run_simple_keras_lr.py)
 
 1. After you've have setup your environment `cd <your_cloned_directory>/mlflow-workshop-part-2/src`
 2. ```python run_project_example_1.py```
