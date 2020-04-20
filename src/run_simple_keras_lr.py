@@ -62,7 +62,7 @@ def mlflow_run(params, run_name="Keras Linear Regression"):
 
 # Use the model
 if __name__ == '__main__':
-   # suppress any deprcated warnings
+   # suppress any deprecated warnings
    warnings.filterwarnings("ignore", category=DeprecationWarning)
 
    params = {'batch_size': 5,
