@@ -130,8 +130,8 @@ We will use programmtic interfeace [mlflow.run(...)](https://mlflow.org/docs/lat
  * `mlflow ui`
  * Got the brower and connect ```http://127.0.0.1:5000```
 
-Tutorial 2 
-----------
+Tutorial 2 - Part 1
+-------------------
 
 [run_simple_kerdas_lr.py](src/run_simple_keras_lr.py)
 
@@ -144,16 +144,27 @@ Tutorial 2
  
  **Note**: We are loading a Keras Model as a pyfunc model and using pandas.DataFrame to do the prediction.
  This demonstrates the capability of model flavors as discussed in the lecture slides.
+ 
+ Tutorial 2 - Part 2
+ -------------------
+ 
+1. After you've have setup your environment `cd <your_cloned_directory>/mlflow-workshop-part-2/src`
+2. ```mlflow run mlflow run git@github.com:dmatrix/mlflow-workshop-project-expamle-1.git```
+3. Launch MLflow UI to view and compare the runs.
+ * `mlflow ui`
+ * Got the brower and connect ```http://127.0.0.1:5000```
 
 Homework/Lab Assignment
 -----------------------
 
-Using the above as examples:
- * Convert this Keras model or one of the models from the workshop series [Part 1](https://github.com/dmatrix/mlflow-workshop-part-1)
- convert it as a MLflow GitHub Project and execute using different modes of execution demonstrated here.
- * Supply differentarguments as model parameters. 
- * Use MLflow Tracking API for this [TensorFlow/Keras Regression Model](https://www.tensorflow.org/tutorials/keras/regression)
-    * Using [mlflow.tensorfow.autolog()](https://mlflow.org/docs/latest/python_api/mlflow.tensorflow.html#mlflow.tensorflow.autolog)
+Using what we have learning in this session:
+ * Using one of the models explored in [Part 1](https://github.com/dmatrix/mlflow-workshop-part-1), convert it as an MLflow GitHub Project
+ * Supply different arguments as model parameters. 
+ * Use MLflow Tracking API to experiment this [TensorFlow/Keras Regression Model](https://www.tensorflow.org/tutorials/keras/regression)
+    * Load the TensorFlow Model as pyfunc as we did above
+     * Make predicions by supplying a pandas DataFrame
+     * Use [mlflow.tensorfow.autolog()](https://mlflow.org/docs/latest/python_api/mlflow.tensorflow.html#mlflow.tensorflow.autolog)
+     
 
 Cheers,
 Jules
