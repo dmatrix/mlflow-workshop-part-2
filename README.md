@@ -130,12 +130,12 @@ We will use programmtic interfeace [mlflow.run(...)](https://mlflow.org/docs/lat
  * `mlflow ui`
  * Got the brower and connect ```http://127.0.0.1:5000```
 
-Tutorial 2 - Part 1
--------------------
+Tutorial 2 
+----------
 
-[simple_keras_lr.py](src/simple_keras_lr.py)
+[run_simple_keras_lr.py](src/run_simple_keras_lr.py)
 
-1. 1. After you've have setup your environment `cd <your_cloned_directory>/mlflow-workshop-part-2/src`
+1. After you've have setup your environment `cd <your_cloned_directory>/mlflow-workshop-part-2/src`
 2. ```python run_project_example_1.py```
 3. This will create more under the `mlruns` with experiment ID 0, and all new runs under it.
 4. Launch MLflow UI to view and compare the runs.
@@ -149,7 +149,7 @@ Homework/Lab Assignment
 -----------------------
 
 Using the above as examples:
- * convert this Keras model or one of the models from the workshop series [Part 1](https://github.com/dmatrix/mlflow-workshop-part-1)
+ * Convert this Keras model or one of the models from the workshop series [Part 1](https://github.com/dmatrix/mlflow-workshop-part-1)
  convert it as a MLflow GitHub Project and execute using different modes of execution demonstrated here.
  * Supply differentarguments as model parameters. 
  * Use MLflow Tracking API for this [TensorFlow/Keras Regression Model](https://www.tensorflow.org/tutorials/keras/regression)
