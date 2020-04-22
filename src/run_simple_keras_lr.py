@@ -70,10 +70,12 @@ if __name__ == '__main__':
    (exp_id, run_id) = mlflow_run(params)
    print(f"Finished Experiment id={exp_id} and run id = {run_id}")
 
-   # Load this Keras Model as a pyfunc model and make a prediction
+   # Load this Keras Model Flavor as a pyfunc model flavor and make a prediction
    pyfunc_uri = f"runs:/{run_id}/model"
    pyfunc_model = mlflow.pyfunc.load_model(pyfunc_uri)
    # Given Fahernheight -> Predict Celcius
+   # Create a pandas DataFrame with Faherheigt unseen values
+   # Get the prediction
    df = pd.DataFrame(np.array([32, 212, 200, 206]))
    pred = pyfunc_model.predict(df)
    print(pred)

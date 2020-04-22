@@ -1,5 +1,5 @@
 #
-# shell script to run GitHub Project programmatically
+# shell script to run GitHub Project using CLI
 #
 # Iterate over different values for the parameters
 #

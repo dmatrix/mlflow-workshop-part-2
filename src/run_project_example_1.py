@@ -3,7 +3,7 @@ import warnings
 
 #
 # Short example how to run a MLflow GitHub Project programmatically using
-# MLflow Fluent APIs shttps://mlflow.org/docs/latest/python_api/mlflow.html#mlflow.run
+# MLflow Fluent APIs https://mlflow.org/docs/latest/python_api/mlflow.html#mlflow.run
 #
 
 if __name__ == '__main__':
