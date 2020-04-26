@@ -112,8 +112,14 @@ We will use MLflow CLI [mlflow run [OPTIONS] URI](https://mlflow.org/docs/latest
 [run_project_example_1.sh](src/run_project_example_1.sh)
 
 1. After you've have setup your environment `cd <your_cloned_directory>/mlflow-workshop-part-2/src`
-2. ```./run_project_example_1.sh```
-3. This will create `./mlruns` directory and logs all runs under it.
+2. Run the shell script using MLfow CLI
+    * ```./run_project_example_1.sh```
+    * This will create `./mlruns` directory and logs all runs under it.
+3. Check the source for this MLflow Git Hub Project
+ * Launch this in the browser: [MLflow Project Wine Example](https://github.com/mlflow/mlflow-example)
+4. Launch MLflow UI to view and compare the runs.
+ * `mlflow ui`
+ * Got the brower and connect ```http://127.0.0.1:5000```
 
 Tutorial 1 - Part 2
 -------------------
@@ -125,8 +131,9 @@ We will use programmtic interfeace [mlflow.run(...)](https://mlflow.org/docs/lat
 [run_project_example_1.py](src/run_project_example_1.py)
 
 1. After you've have setup your environment `cd <your_cloned_directory>/mlflow-workshop-part-2/src`
-2. ```python run_project_example_1.py```
-3.This will create `./mlruns` directory and log all runs under it.
+2. Run the python script 
+ * ```python run_project_example_1.py```
+ * This will create `./mlruns` directory and log all runs under it.
 4. Launch MLflow UI to view and compare the runs.
  * `mlflow ui`
  * Got the brower and connect ```http://127.0.0.1:5000```
@@ -137,7 +144,9 @@ Tutorial 2 - Part 1
 [run_simple_kerdas_lr.py](src/run_simple_keras_lr.py)
 
 1. After you've have setup your environment `cd <your_cloned_directory>/mlflow-workshop-part-2/src`
-2. ```python run_project_example_1.py```
+2. Let's look at the source and see what's we doing...
+ * load into your favorite editor or PyCharm
+2. ```python run_project_example_1.py``` or run it from PyCharm
 3. This will create `./mlruns` directory and log all runs under it.
 4. Launch MLflow UI to view and compare the runs.
  * `mlflow ui`
@@ -148,9 +157,14 @@ Tutorial 2 - Part 1
  
  Tutorial 2 - Part 2
  -------------------
- 
+ This is the same example as above in Tutorial 2 (part 1) but converted into an MLflow Project
+1. Let's visit what it looks like... 
+ * [MLflow Project: Keras Example](https://github.com/dmatrix/mlflow-workshop-project-expamle-1)
 1. After you've have setup your environment `cd <your_cloned_directory>/mlflow-workshop-part-2/src`
-2. ```mlflow run mlflow run git@github.com:dmatrix/mlflow-workshop-project-expamle-1.git```
+2. Run with default paramerters
+   * ```mlflow run git@github.com:dmatrix/mlflow-workshop-project-expamle-1.git```
+3. Run with parameters
+   * ```mlflow run git@github.com:dmatrix/mlflow-workshop-project-expamle-1.git -P batch_size=5 -P epochs=500```
 3. Launch MLflow UI to view and compare the runs.
  * `mlflow ui`
  * Got the brower and connect ```http://127.0.0.1:5000```

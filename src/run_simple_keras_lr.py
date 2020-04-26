@@ -73,6 +73,7 @@ if __name__ == '__main__':
    # Load this Keras Model Flavor as a pyfunc model flavor and make a prediction
    pyfunc_uri = f"runs:/{run_id}/model"
    pyfunc_model = mlflow.pyfunc.load_model(pyfunc_uri)
+   print(f"Loading the Keras Model={pyfunc_uri} as Pyfunc Model")
    # Given Fahernheight -> Predict Celcius
    # Create a pandas DataFrame with Faherheigt unseen values
    # Get the prediction
