@@ -5,7 +5,7 @@ Part 2 of 3
 -----------
 Other parts:
 - [Part 1](https://github.com/dmatrix/mlflow-workshop-part-1)
-- [Part 3]()
+- [Part 3](https://github.com/dmatrix/mlflow-workshop-part-3)
 
 Content for the MLflow Series
 -----------------------------
@@ -111,13 +111,15 @@ We will use MLflow CLI [mlflow run [OPTIONS] URI](https://mlflow.org/docs/latest
 
 [run_project_example_1.sh](src/run_project_example_1.sh)
 
-1. After you've have setup your environment `cd <your_cloned_directory>/mlflow-workshop-part-2/src`
-2. Run the shell script using MLfow CLI
+1. 1. Let's visit what it looks like...
+ * [MLflow Project: Wine Example](https://github.com/mlflow/mlflow-example)
+2. After you've have setup your environment `cd <your_cloned_directory>/mlflow-workshop-part-2/src`
+3. Run the shell script using MLfow CLI
     * ```./run_project_example_1.sh```
     * This will create `./mlruns` directory and logs all runs under it.
-3. Check the source for this MLflow Git Hub Project
+4. Check the source for this MLflow Git Hub Project
  * Launch this in the browser: [MLflow Project Wine Example](https://github.com/mlflow/mlflow-example)
-4. Launch MLflow UI to view and compare the runs.
+5. Launch MLflow UI to view and compare the runs.
  * `mlflow ui`
  * Got the brower and connect ```http://127.0.0.1:5000```
 
@@ -126,7 +128,6 @@ Tutorial 1 - Part 2
 
 Let's run the same experiment using MLflow Fluent API.
 We will use programmtic interfeace [mlflow.run(...)](https://mlflow.org/docs/latest/python_api/mlflow.html#mlflow.run)
-
 
 [run_project_example_1.py](src/run_project_example_1.py)
 
