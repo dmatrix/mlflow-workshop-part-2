@@ -70,37 +70,38 @@ Obtaining the Tutorial Material
 Familiarity with git is important so that you can get all the material easily during the tutorial and
 workshop as well as continue to work on in your free time, after the session is over.
 
-``` git clone git@github.com:dmatrix/mlflow-workshop-part-2.git or https://github.com/dmatrix/mlflow-workshop-part-2.git```
+```git clone git@github.com:dmatrix/mlflow-workshop-part-2.git or git clone https://github.com/dmatrix/mlflow-workshop-part-2.git```
 
 Documentation Resources
 -----------------------
 
-This tutorial will  refer to documentation: 
+This tutorial will refer to documentation: 
 
-1. [MLflow](https://mlflow.org/docs/latest/index.html) 
-2. [Numpy](https://numpy.org/devdocs/user/quickstart.html)
-3. [Pandas](https://pandas.pydata.org/pandas-docs/stable/reference/index.html)
-4. [Scikit-Learn](https://scikit-learn.org/stable/index.html)
-5. [Keras](https://keras.io/optimizers/)
-6. [TensorFlow](https://tensorflow.org)
-7. [Matplotlib](https://matplotlib.org/3.2.0/tutorials/introductory/pyplot.html)
+1. [MLflow](https://mlflow.org/docs/latest/index.html)
+3. [Numpy](https://numpy.org/devdocs/user/quickstart.html)
+4. [Pandas](https://pandas.pydata.org/pandas-docs/stable/reference/index.html)
+5. [Scikit-Learn](https://scikit-learn.org/stable/index.html)
+6. [Keras](https://keras.io/optimizers/)
+7. [TensorFlow](https://tensorflow.org)
+8. [Matplotlib](https://matplotlib.org/3.2.0/tutorials/introductory/pyplot.html)
 
 Installation and Setup environment
 ----------------------------------
 
-1. ``` git clone git@github.com:dmatrix/mlflow-workshop-part-2.git or git clone https://github.com/dmatrix/mlflow-workshop-part-2.git```
+1. ```git clone git@github.com:dmatrix/mlflow-workshop-part-2.git or git clone https://github.com/dmatrix/mlflow-workshop-part-2.git```
 2. `cd <your_cloned_directory>/mlflow-workshop-part-2`
-3. Install MLflow and the required Python modules within our conda or pipenv environments if using it
+3. Install MLflow and the required Python modules within your [conda activated environment](https://docs.conda.io/projects/conda/en/latest/user-guide/install/) or [pipenv environment](https://pypi.org/project/pipenv) if using it
     * `pip install -r req.txt` or `pip3 install -r req.txt`
 5. `cd src`
 6. If using PyCharm or IntelliJ, create a project and load source files in the project
+7. [How to use PyCharm and MLflow](https://www.youtube.com/watch?v=yzn1hNkQuWA&feature=youtu.be)
 
 Let's go!
 
 Session Tutorials
 -----------------
 
-We'll use our local host run MLflow projects via GitHub URL
+We'll use localhost (or your laptop) to run MLflow projects via GitHub URL, as experiment runs.
 
 Tutorial 1 - Part 1 
 -------------------
@@ -112,7 +113,7 @@ We will use MLflow CLI [mlflow run [OPTIONS] URI](https://mlflow.org/docs/latest
 
 1. After you've have setup your environment `cd <your_cloned_directory>/mlflow-workshop-part-2/src`
 2. ```./run_project_example_1.sh```
-3. This will create `./mlruns` directory with experiment ID 0, and all runs under it.
+3. This will create `./mlruns` directory and logs all runs under it.
 
 Tutorial 1 - Part 2
 -------------------
@@ -125,7 +126,7 @@ We will use programmtic interfeace [mlflow.run(...)](https://mlflow.org/docs/lat
 
 1. After you've have setup your environment `cd <your_cloned_directory>/mlflow-workshop-part-2/src`
 2. ```python run_project_example_1.py```
-3. This will create more under the `mlruns` with experiment ID 0, and all new runs under it.
+3.This will create `./mlruns` directory and log all runs under it.
 4. Launch MLflow UI to view and compare the runs.
  * `mlflow ui`
  * Got the brower and connect ```http://127.0.0.1:5000```
@@ -137,7 +138,7 @@ Tutorial 2 - Part 1
 
 1. After you've have setup your environment `cd <your_cloned_directory>/mlflow-workshop-part-2/src`
 2. ```python run_project_example_1.py```
-3. This will create more under the `mlruns` with experiment ID 0, and all new runs under it.
+3. This will create `./mlruns` directory and log all runs under it.
 4. Launch MLflow UI to view and compare the runs.
  * `mlflow ui`
  * Got the brower and connect ```http://127.0.0.1:5000```
@@ -159,7 +160,7 @@ Homework/Lab Assignment
 
 Using what we have learning in this session:
  * Using one of the models explored in [Part 1](https://github.com/dmatrix/mlflow-workshop-part-1), convert it as an MLflow GitHub Project
- * Supply different arguments as model parameters. 
+    * Supply different arguments as model parameters
  * Use MLflow Tracking API to experiment this [TensorFlow/Keras Regression Model](https://www.tensorflow.org/tutorials/keras/regression)
     * Load the TensorFlow Model as pyfunc as we did above
      * Make predicions by supplying a pandas DataFrame
