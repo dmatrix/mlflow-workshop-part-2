@@ -90,7 +90,7 @@ How to get started
 ------------------
 We will walk through this during the session, but please sign up for [Databrick Community Edition](https://databricks.com/try-databricks) before the session :
 
-1. ``` git clone git@github.com:dmatrix/mlflow-workshop-part-1.git ```
+1. ``` git clone git@github.com:dmatrix/mlflow-workshop-part-2.git ```
 2. [Login](https://community.cloud.databricks.com/login.html) into the Datarbicks Community Edition]
 
 ![](images/databricks_ce_loging.png)
