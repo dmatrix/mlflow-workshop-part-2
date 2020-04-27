@@ -178,7 +178,7 @@ Let's take our model from the previous example (Tutorial 2 - Part 2) and deploy 
 a rest point in a Flask server launched MLflow CLI. 
 
 1. From a separate window launch 
- * launch ```mlflow models serve --model-uri runs:/<INSERT_YOUR_RUN_ID_HERE>/model --no-conda```
+ * launch ```mlflow models serve --model-uri runs:/<INSERT_YOUR_RUN_ID_HERE>/model --no-conda``` or ```mlflow models serve -m runs:/<INSERT_YOUR_RUN_ID_HERE>/model --no-conda```
 2. From another terminal send a REST call with Farenheight temperatures
   * ```curl http://127.0.0.1:5000/invocations -H 'Content-Type: application/json' -d '{"data": [32, 212, 200, 206]}'```
   * ```curl http://127.0.0.1:5000/invocations -H 'Content-Type: application/json' -d '{"data": [100, 150]}'```
@@ -189,10 +189,10 @@ Homework/Lab Assignment
 Using what we have learning in this session:
  * Using one of the models explored in [Part 1](https://github.com/dmatrix/mlflow-workshop-part-1), build an MLflow GitHub Project
     * Supply different arguments as model parameters
- * Use MLflow CLI to serve and deploy this model locally
+ * Use ```mlflow models serve [OPTIONS]``` to serve and deploy this model locally
   * send REST request to score
+ * Use ```mlflow models predict [OPTIONS]``` only to predict (this does not launch a Flask Server)
      
-
 Cheers,
 
 Jules
