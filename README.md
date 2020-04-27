@@ -44,14 +44,13 @@ In this part 2, we will cover:
  * Concepts and motivation behind MLflow Projects and Models
  * Tour of the the MLflow Project and Model API Documentation
  * MLflow CLI for Projects and APIs
- * Execute MLflow Project locally
- * How to use MLflow CLI to deploy and serve [MLflow Model](https://www.mlflow.org/docs/latest/models.html#deploy-mlflow-models) locally
  * Build an MLflow Project and share it for reproducible runs
- * Use the MLflow UI on the local host 
+ * Use the MLflow UI on the DCE
 
 Prerequisites
 -------------
 * [Part 1](https://github.com/dmatrix/mlflow-workshop-part-1) of this series
+*  Before the session, please pre-register for [Databricks Community Edition](https://databricks.com/try-databricks)
 * Knowledge of Python 3 and programming in general
 * Preferably a UNIX-based, fully-charged laptop with 8-16 GB, with a Chrome or Firefox browser
 * Familiarity with GitHub, git, and an account on Github
@@ -60,9 +59,9 @@ Prerequisites
      * pandas and Numpy
      * matplotlib
      * keras/TensorFlow
-* PyCharm/IntelliJ or choice of syntax-based Python editor
-* pip/pip3 or conda and Python 3 installed
-* Knowledge on how to use [conda](https://docs.conda.io/projects/conda/en/latest/user-guide/install/) or create [pipenv](https://pypi.org/project/pipenv/) enviroments 
+* (**optional for part-2**) PyCharm/IntelliJ or choice of syntax-based Python editor
+* (**optional for part-2**) pip/pip3 or conda and Python 3 installed
+* (**optional for part-2**) Knowledge on how to use [conda](https://docs.conda.io/projects/conda/en/latest/user-guide/install/) or create [pipenv](https://pypi.org/project/pipenv/) enviroments 
 * Loads of virtual laughter, curiosity, and a sense of humor ... :-)
 
 Obtaining the Tutorial Material
@@ -87,112 +86,45 @@ This tutorial will refer to documentation:
 8. [Matplotlib](https://matplotlib.org/3.2.0/tutorials/introductory/pyplot.html)
 9. Loads of basic and advanced [MLflow Examples](https://github.com/amesar/mlflow-examples) from Andre Mesarovic
 
-Installation and Setup environment
-----------------------------------
+How to get started
+------------------
+We will walk through this during the session, but please sign up for [Databrick Community Edition](https://databricks.com/try-databricks) before the session :
 
-1. ```git clone git@github.com:dmatrix/mlflow-workshop-part-2.git or git clone https://github.com/dmatrix/mlflow-workshop-part-2.git```
-2. `cd <your_cloned_directory>/mlflow-workshop-part-2`
-3. Install MLflow and the required Python modules within your [conda activated environment](https://docs.conda.io/projects/conda/en/latest/user-guide/install/) or [pipenv environment](https://pypi.org/project/pipenv) if using it
-    * `pip install -r req.txt` or `pip3 install -r req.txt`
-5. `cd src`
-6. If using PyCharm or IntelliJ, create a project and load source files in the project
-7. [How to use PyCharm and MLflow](https://www.youtube.com/watch?v=yzn1hNkQuWA&feature=youtu.be)
+1. ``` git clone git@github.com:dmatrix/mlflow-workshop-part-1.git ```
+2. [Login](https://community.cloud.databricks.com/login.html) into the Datarbicks Community Edition]
+
+![](images/databricks_ce_loging.png)
+
+3. Create a ML Runtime 6.5 Cluster
+
+![](images/databricks_ce_create_mlr.png)
+
+4. In the brower: 
+  * (1) Go the GitHub **notebooks** subdirectory
+  * (2) Download **MLFlow-CE-Part2.dbc** file on your laptop
+
+![](images/databricks_ce_download_notebooks.png)
+
+5. Import the **MLFlow-CE-Part2.dbc** file into the Databricks Community Edition
+
+![](images/databricks_ce_import_notebooks.png)
 
 Let's go!
 
-Session Tutorials
------------------
-
-We'll use localhost (or your laptop) to run MLflow projects via GitHub URL, as experiment runs.
-
-Tutorial 1 - Part 1 
--------------------
-
-Let's run a shell script to run remote MLflow GitHub Project URI.
-We will use MLflow CLI [mlflow run [OPTIONS] URI](https://mlflow.org/docs/latest/cli.html#mlflow-run)
-
-[run_project_example_1.sh](src/run_project_example_1.sh)
-
-1. 1. Let's visit what it looks like...
- * [MLflow Project: Wine Example](https://github.com/mlflow/mlflow-example)
-2. After you've have setup your environment `cd <your_cloned_directory>/mlflow-workshop-part-2/src`
-3. Run the shell script using MLfow CLI
-    * ```./run_project_example_1.sh```
-    * This will create `./mlruns` directory and logs all runs under it.
-4. Check the source for this MLflow Git Hub Project
- * Launch this in the browser: [MLflow Project Wine Example](https://github.com/mlflow/mlflow-example)
-5. Launch MLflow UI to view and compare the runs.
- * `mlflow ui`
- * Got the brower and connect ```http://127.0.0.1:5000```
-
-Tutorial 1 - Part 2
--------------------
-
-Let's run the same experiment using MLflow Fluent API.
-We will use programmtic interfeace [mlflow.run(...)](https://mlflow.org/docs/latest/python_api/mlflow.html#mlflow.run)
-
-[run_project_example_1.py](src/run_project_example_1.py)
-
-1. After you've have setup your environment `cd <your_cloned_directory>/mlflow-workshop-part-2/src`
-2. Run the python script 
- * ```python run_project_example_1.py```
- * This will create `./mlruns` directory and log all runs under it.
-4. Launch MLflow UI to view and compare the runs.
- * `mlflow ui`
- * Got the brower and connect ```http://127.0.0.1:5000```
-
-Tutorial 2 - Part 1
--------------------
-
-[run_simple_kerdas_lr.py](src/run_simple_keras_lr.py)
-
-1. After you've have setup your environment `cd <your_cloned_directory>/mlflow-workshop-part-2/src`
-2. Let's look at the source and see what's we doing...
- * load into your favorite editor or PyCharm
-2. ```python run_project_example_1.py``` or run it from PyCharm
-3. This will create `./mlruns` directory and log all runs under it.
-4. Launch MLflow UI to view and compare the runs.
- * `mlflow ui`
- * Got the brower and connect ```http://127.0.0.1:5000```
- 
- **Note**: We are loading a Keras Model as a pyfunc model and using pandas.DataFrame to do the prediction.
- This demonstrates the capability of model flavors as discussed in the lecture slides.
- 
- Tutorial 2 - Part 2
- -------------------
- This is the same example as above in Tutorial 2 (part 1) but converted into an MLflow Project
-1. Let's visit what it looks like... 
- * [MLflow Project: Keras Example](https://github.com/dmatrix/mlflow-workshop-project-expamle-1)
-1. After you've have setup your environment `cd <your_cloned_directory>/mlflow-workshop-part-2/src`
-2. Run with default paramerters
-   * ```mlflow run git@github.com:dmatrix/mlflow-workshop-project-expamle-1.git```
-3. Run with parameters
-   * ```mlflow run git@github.com:dmatrix/mlflow-workshop-project-expamle-1.git -P batch_size=5 -P epochs=500```
-3. Launch MLflow UI to view and compare the runs.
- * `mlflow ui`
- * Got the brower and connect ```http://127.0.0.1:5000```
- 
- Tutorial 3 - Part 1
- --------------------
- 
-Let's take our model from the previous example (Tutorial 2 - Part 2) and deploy and serve it locally as
-a rest point in a Flask server launched MLflow CLI. 
-
-1. From a separate window launch 
- * launch ```mlflow models serve --model-uri runs:/<INSERT_YOUR_RUN_ID_HERE>/model --no-conda``` or ```mlflow models serve -m runs:/<INSERT_YOUR_RUN_ID_HERE>/model --no-conda```
-2. From another terminal send a REST call with Farenheight temperatures
-  * ```curl http://127.0.0.1:5000/invocations -H 'Content-Type: application/json' -d '{"data": [32, 212, 200, 206]}'```
-  * ```curl http://127.0.0.1:5000/invocations -H 'Content-Type: application/json' -d '{"data": [100, 150]}'```
 
 Homework/Lab Assignment
 -----------------------
 
 Using what we have learning in this session:
+ * Improve the Keras Model with different parameters
+  * More input_units
+  * Use train/split and validation data
+  * Increase the size of training data
+  * Run at least three experiments
+  * Compare the runs and metrics
  * Using one of the models explored in [Part 1](https://github.com/dmatrix/mlflow-workshop-part-1), build an MLflow GitHub Project
     * Supply different arguments as model parameters
- * Use ```mlflow models serve [OPTIONS]``` to serve and deploy this model locally
-  * send REST request to score
- * Use ```mlflow models predict [OPTIONS]``` only to predict (this does not launch a Flask Server)
+ 
      
 Cheers,
 
