@@ -73,8 +73,8 @@ workshop as well as continue to work on in your free time, after the session is 
 
 ```git clone git@github.com:dmatrix/mlflow-workshop-part-2.git or git clone https://github.com/dmatrix/mlflow-workshop-part-2.git```
 
-Documentation Resources
------------------------
+Documentation and other Resources
+---------------------------------
 
 This tutorial will refer to documentation: 
 
@@ -85,6 +85,7 @@ This tutorial will refer to documentation:
 6. [Keras](https://keras.io/optimizers/)
 7. [TensorFlow](https://tensorflow.org)
 8. [Matplotlib](https://matplotlib.org/3.2.0/tutorials/introductory/pyplot.html)
+9. Loads of basic and advanced [MLflow Examples](https://github.com/amesar/mlflow-examples) from Andre Mesarovic
 
 Installation and Setup environment
 ----------------------------------
