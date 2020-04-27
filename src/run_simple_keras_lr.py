@@ -74,8 +74,8 @@ if __name__ == '__main__':
    pyfunc_uri = f"runs:/{run_id}/model"
    pyfunc_model = mlflow.pyfunc.load_model(pyfunc_uri)
    print(f"Loading the Keras Model={pyfunc_uri} as Pyfunc Model")
-   # Given Fahernheight -> Predict Celcius
-   # Create a pandas DataFrame with Faherheight unseen values
+   # Given Fahrenheit -> Predict Celcius
+   # Create a pandas DataFrame with Fahrenheit unseen values
    # Get the Celius prediction
    df = pd.DataFrame(np.array([32, 212, 200, 206]))
    pred = pyfunc_model.predict(df)
