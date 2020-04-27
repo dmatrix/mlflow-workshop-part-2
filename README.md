@@ -45,6 +45,7 @@ In this part 2, we will cover:
  * Tour of the the MLflow Project and Model API Documentation
  * MLflow CLI for Projects and APIs
  * Execute MLflow Project locally
+ * How to use MLflow CLI to deploy and serve [MLflow Model](https://www.mlflow.org/docs/latest/models.html#deploy-mlflow-models) locally
  * Build an MLflow Project and share it for reproducible runs
  * Use the MLflow UI on the local host 
 
@@ -169,18 +170,29 @@ Tutorial 2 - Part 1
 3. Launch MLflow UI to view and compare the runs.
  * `mlflow ui`
  * Got the brower and connect ```http://127.0.0.1:5000```
+ 
+ Tutorial 3 - Part 1
+ --------------------
+ 
+Let's take our model from the previous example (Tutorial 2 - Part 2) and deploy and serve it locally as
+a rest point in a Flask server launched MLflow CLI. 
+
+1. From a separate window launch 
+ * launch ```mlflow models serve --model-uri runs:/<INSERT_YOUR_RUN_ID_HERE>/model --no-conda```
+2. From another terminal send a REST call with Farenheight temperatures
+  * ```curl http://127.0.0.1:5000/invocations -H 'Content-Type: application/json' -d '{"data": [32, 212, 200, 206]}'```
+  * ```curl http://127.0.0.1:5000/invocations -H 'Content-Type: application/json' -d '{"data": [100, 150]}'```
 
 Homework/Lab Assignment
 -----------------------
 
 Using what we have learning in this session:
- * Using one of the models explored in [Part 1](https://github.com/dmatrix/mlflow-workshop-part-1), convert it as an MLflow GitHub Project
+ * Using one of the models explored in [Part 1](https://github.com/dmatrix/mlflow-workshop-part-1), build an MLflow GitHub Project
     * Supply different arguments as model parameters
- * Use MLflow Tracking API to experiment this [TensorFlow/Keras Regression Model](https://www.tensorflow.org/tutorials/keras/regression)
-    * Load the TensorFlow Model as pyfunc as we did above
-     * Make predicions by supplying a pandas DataFrame
-     * Use [mlflow.tensorfow.autolog()](https://mlflow.org/docs/latest/python_api/mlflow.tensorflow.html#mlflow.tensorflow.autolog)
+ * Use MLflow CLI to serve and deploy this model locally
+  * send REST request to score
      
 
 Cheers,
+
 Jules
