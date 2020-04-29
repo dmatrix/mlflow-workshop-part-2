@@ -86,13 +86,14 @@ This tutorial will refer to documentation:
 7. [TensorFlow](https://tensorflow.org)
 8. [Matplotlib](https://matplotlib.org/3.2.0/tutorials/introductory/pyplot.html)
 9. Loads of basic and advanced [MLflow Examples](https://github.com/amesar/mlflow-examples) from Andre Mesarovic
+10. How to use MLflow in your favorite [Python IDE with Keras](https://databricks.com/blog/2018/08/23/how-to-use-mlflow-to-experiment-a-keras-network-model-binary-classification-for-movie-reviews.html)
 
 How to get started
 ------------------
 We will walk through this during the session, but please sign up for [Databricks Community Edition](https://databricks.com/try-databricks) before the session :
 
 1. ``` git clone git@github.com:dmatrix/mlflow-workshop-part-2.git ```
-2. [Login](https://community.cloud.databricks.com/login.html) into the Databricks Community Edition]
+2. Use this [URL](https://community.cloud.databricks.com/login.html) to log into the Databricks Community Edition
 
 ![](images/databricks_ce_loging.png)
 
