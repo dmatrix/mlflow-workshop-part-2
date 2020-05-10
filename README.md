@@ -126,7 +126,7 @@ Using what we have learning in this session:
   * Compare the runs and metrics
  * Using one of the models explored in [Part 1](https://github.com/dmatrix/mlflow-workshop-part-1), build an MLflow GitHub Project
     * Supply different arguments as model parameters
- 
+ * Or Take one of your ML code and covert it into MLflow Project
      
 Cheers,
 
