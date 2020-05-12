@@ -119,14 +119,14 @@ Homework/Lab Assignment
 
 Using what we have learning in this session:
  * Improve the Keras Model with different parameters
-  * More input_units
-  * Use train/split and validation data
   * Increase the size of training data
+  * Use train/split and validation data
+  * More input_units to the NN Dense layer
   * Run at least three experiments
   * Compare the runs and metrics
- * Using one of the models explored in [Part 1](https://github.com/dmatrix/mlflow-workshop-part-1), build an MLflow GitHub Project
+ * Use one of the models explored in [Part 1](https://github.com/dmatrix/mlflow-workshop-part-1) and build an MLflow GitHub Project
     * Supply different arguments as model parameters
- * Or Take one of your ML code and covert it into MLflow Project
+ * Or Take one of your ML project and covert it into MLflow Project
      
 Cheers,
 
